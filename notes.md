@@ -16,3 +16,8 @@ make test
 ./build/release/duckdb
 ```
 
+# Clean
+
+```
+make format-fix
+```
