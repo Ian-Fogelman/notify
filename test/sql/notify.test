@@ -1,0 +1,19 @@
+# name: test/sql/notify.test
+# description: test notify extension
+# group: [sql]
+
+mode output_result
+
+# Before we load the extension, this will fail
+statement error
+SELECT notify_slack('yyyy', 'Hi from DuckDB 🐥!', 'xxxxx') as notify_response;
+----
+Catalog Error: Scalar Function with name notify_slack does not exist!
+
+# Require statement will ensure this test is run with this extension loaded
+require notify
+
+query I
+SELECT notify_slack('yyyy', 'Hi from DuckDB 🐥!', 'xxxxx') as notify_response;
+----
+Error: Couldn't resolve host name

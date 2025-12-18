@@ -1,0 +1,2 @@
+- [] Support Discord with `notify_discord()`
+- [] Support MS Teams with `notify_teams()`
